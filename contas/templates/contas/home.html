@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang=”pt-br”>
+<head>
+  <meta charset=”UTF-8”>
+  <title></title>
+</head>
+<body bgcolor="pink">
+    <h1>CONTROLE DE GASTOS</h1>
+  <h2>Listagem</h2>
+    <ul type="circle">
+      {% for transacao in transacoes %}
+          <li><a href="{% url 'url_update' transacao.id %}">{{ transacao.descricao }} - {{ transacao.data }} - 
+            {{ transacao.valor }} - {{ transacao.categoria }}</a</li>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'url_nova' %}">Novo</a>
+</body>
+</html>
+
