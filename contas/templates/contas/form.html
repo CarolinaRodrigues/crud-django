@@ -11,15 +11,21 @@
         .form-control {
             display: flex;
             flex-direction: column;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <form action="" method="post">
         {% csrf_token %}
+
+        {%for field in form %}
         <div class="form-control">
-            {{ form.as_p }}
+            <label for="">{{field.label}}</label>
+            {{ field }}
         </div>
+        {% endfor%}
+
         <button type="button" value="Voltar" >Voltar<a href="{% url 'url_home' %}"></a</button>
         <button type="submit">Salvar</button>
         {% if transacao %}
