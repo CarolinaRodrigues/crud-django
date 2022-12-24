@@ -1,3 +1,14 @@
 body {
-    background-color: blue;
+    
+}
+
+.btn {
+    padding: 20px;
+    border-radius: 20px;
+}
+       
+.form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
