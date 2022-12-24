@@ -26,7 +26,7 @@ def update(request, pk):
 
     if form.is_valid():
         form.save()
-        return redirect('url_update')
+        return redirect('url_home')
 
     data['form'] = form
     data['transacao'] = transacao

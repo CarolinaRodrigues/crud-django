@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <div class="container">
     <form action="" method="post">
         {% csrf_token %}
 
@@ -19,12 +20,19 @@
             {{ field }}
         </div>
         {% endfor%}
-
-        <button type="button" value="Voltar" >Voltar<a href="{% url 'url_home' %}"></a</button>
-        <button class="btn" type="submit">Salvar</button>
-        {% if transacao %}
-            <a href="{% url 'url_delete' transacao.id %}">Remover</a>
-        {% endif %}
+        <div class="btn-group">
+            <button class="btn" type="button" ><a class="remove-line" href="{% url 'url_home' %}">Voltar</a</button>
+            <button class="btn btn-style-1" type="submit">Salvar</button>
+            {% if transacao %}
+                <button class="btn btn-style-2"> 
+                <a class="remove-line a-red" href="{% url 'url_delete' transacao.id %}">Deletar</a>
+                </button>
+            {% endif %}
+            
+        </div>
+        
+        
     </form>
+</div>
 </body>
 </html>
